@@ -7,12 +7,6 @@ describe('addProductsToCart', () => {
     cy.intercept('https://fakestoreapi.com/products/*').as('getProductDetailsInCart');
     cy.get('#go-to-cart').click();
     cy.url().should('contains', 'http://localhost:3000/cart/');
-
-    // cy.getLocal('products').
-    //   then(() => {
-    //     cy.wait('@getProductDetailsInCart').then(() => {
-    //       cy.get('#cart-total').should('have.text', '109.95');
-    //     });
-    //   });
+    cy.get('#cart-total').should('have.text', 'Total: 109.95');
   });
 });
