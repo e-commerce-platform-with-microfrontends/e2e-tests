@@ -3,3 +3,5 @@ dist/
 .DS_Store
 .vscode/
 cypress/videos
+cypress/downloads
+cypress/screenshots
